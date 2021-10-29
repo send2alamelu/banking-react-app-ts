@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "f6338b6e-9f29-4157-bc65-bb273a8fe006",
+		"name": "MDT Mock",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authenticate/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const resp = pm.response.json()",
+							"console.log('x-jwt-token --------->', resp.token)",
+							"pm.collectionVariables.set('x-jwt-token', resp.token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"ocbc\",\n    \"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}authenticate/login",
+					"host": [
+						"{{url}}authenticate"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "account/balances",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{x-jwt-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}account/balances",
+					"host": [
+						"{{url}}account"
+					],
+					"path": [
+						"balances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "account/payees",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{x-jwt-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}account/payees",
+					"host": [
+						"{{url}}account"
+					],
+					"path": [
+						"payees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "account/transactions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{x-jwt-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}account/transactions",
+					"host": [
+						"{{url}}account"
+					],
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{x-jwt-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"recipientAccountNo\": \"4992-992-9021\",\n    \"amount\": 100,\n    \"date\": \"2021-09-12T00:00:00.000Z\",\n    \"description\": \"room rental\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}transfer",
+					"host": [
+						"{{url}}transfer"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "x-jwt-token",
+			"value": ""
+		},
+		{
+			"key": "url",
+			"value": "http://localhost:8080/"
+		}
+	]
+}
