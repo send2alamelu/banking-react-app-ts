@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.2.0",
   "private": true,
+  "homepage": "https://send2alamelu.github.io/banking-react-app-ts",
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",

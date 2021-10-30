@@ -17,9 +17,9 @@ function App() {
           <Suspense fallback={<CircularProgress />}>
             <Container maxWidth="sm">
               <Box sx={{ my: 4 }}>
-                <Route exact path="/" component={LoginPage} />
-                <Route path="/dashboard" component={DashboardPage} />
-                <Route path="/transaction" component={TransactionPage} />
+                <Route exact path={`${process.env.PUBLIC_URL}/`} component={LoginPage} />
+                <Route path={`${process.env.PUBLIC_URL}/dashboard`} component={DashboardPage} />
+                <Route path={`${process.env.PUBLIC_URL}/transaction`} component={TransactionPage} />
               </Box>
             </Container>
           </Suspense>
