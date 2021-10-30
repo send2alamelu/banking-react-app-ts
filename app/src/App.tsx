@@ -12,7 +12,7 @@ const TransactionPage = React.lazy(() => import('./pages/Transaction/Transaction
 function App() {
   return (
     <React.Fragment>
-      <BrowserRouter>
+      <BrowserRouter basename="/banking-react-app-ts">
         <Switch>
           <Suspense fallback={<CircularProgress />}>
             <Container maxWidth="sm">
