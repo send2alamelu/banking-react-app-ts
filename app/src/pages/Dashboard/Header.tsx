@@ -2,11 +2,15 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Link from '@mui/material/Link';
 
+import { ROUTE_PATH } from '../../constants/RoutePath';
+const { LOGIN } = ROUTE_PATH;
+
 export default function Header() {
   const history = useHistory();
   const logout = (e: any) => {
     e.preventDefault();
-    history.push("/");
+    localStorage.removeItem('jwtToken');
+    history.push(LOGIN);
   }
 
   return (

@@ -10,7 +10,8 @@ interface Props {
   items: {
     value: string;
     label: string;
-  }[]
+  }[],
+  onChange: Function
 }
 
 export default function Dropdown(props: Props) {
@@ -25,7 +26,8 @@ export default function Dropdown(props: Props) {
    * https://github.com/mui-org/material-ui/issues/16065
    */
   const handleChange = (event: any) => {
-    setDropdownValue(event.currentTarget.value);
+    setDropdownValue(event.target.value);
+    props.onChange(event.target.value);
   };
 
   return (

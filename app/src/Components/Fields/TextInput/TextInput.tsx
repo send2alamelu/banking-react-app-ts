@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { ChangeEventHandler } from 'react';
 import TextField from '@mui/material/TextField';
+import TextInputProps from './TextInput.props';
 
-interface Props {
-  label: string;
-}
+function TextInput(props: TextInputProps) {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    props.onChange(e.target.value);
+  };
 
-function TextInput(props: Props) {
   return (
     <>
-      <TextField id="standard-basic" label={props?.label} variant="standard" />
+      <TextField id="standard-basic" label={props?.label} variant="standard" onChange={onChange} />
     </>
   );
 }

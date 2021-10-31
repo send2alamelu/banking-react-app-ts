@@ -1,26 +1,63 @@
-import React from 'react';
-import Link from '@mui/material/Link';
+import { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Grid } from '@mui/material';
 
-import TextInput from '../../Components/Fields/TextInput/TextInput';
-import PasswordInput from '../../Components/Fields/PasswordInput/PasswordInput';
-import ActionButton from '../../Components/Fields/ActionButton/ActionButton';
+// Components.
+import TextInput from '../../components/Fields/TextInput/TextInput';
+import PasswordInput from '../../components/Fields/PasswordInput/PasswordInput';
+import ActionButton from '../../components/Fields/ActionButton/ActionButton';
+
+// Hooks.
+import usePost from '../../hooks/usePost';
+
+import { ROUTE_PATH } from '../../constants/RoutePath';
+import { getLoginApiPath } from '../../utils/Api';
+const { DASHBOARD } = ROUTE_PATH;
 
 function Login() {
   const history = useHistory();
-  const goToDashboard = (e: React.MouseEvent<HTMLElement>) => {
+  const { postApi, response, error } = usePost(getLoginApiPath());
+  const [userName, setUserName] = useState('');
+  const [passWord, setPassWord] = useState('');
+
+  useEffect(() => {
+    const loginResponse: any = response;
+    if (loginResponse?.token) {
+      localStorage.setItem('jwtToken', loginResponse?.token)
+      history.push(DASHBOARD);
+    }
+  }, [response, error]);
+
+  const goToDashboard = useCallback(async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    history.push("/dashboard");
-  }
+    if (!userName || !passWord) {
+      return
+    }
+
+    postApi({
+      username: userName,
+      password: passWord
+    });
+  }, [userName, passWord]);
 
   return (
-    <div className="Login">
-      <TextInput label="Username" />
-      <br />
-      <PasswordInput label="Password" />
-      <br /><br />
-      <ActionButton onClick={goToDashboard} />
-    </div>
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+      style={{ minHeight: '100vh' }}
+    >
+      <Grid item>
+        <TextInput id="username" label="Username" onChange={setUserName} />
+        <br />
+        <PasswordInput id="password" label="Password" onChange={setPassWord} />
+        <br /><br />
+        <ActionButton onClick={goToDashboard} />
+      </Grid>
+
+    </Grid>
   );
 }
 

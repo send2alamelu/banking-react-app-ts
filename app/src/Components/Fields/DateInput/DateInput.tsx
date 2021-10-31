@@ -4,11 +4,9 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
 
-interface Props {
-  label: string;
-}
+import DateInputProps from './DateInput.props';
 
-export default function DateInput(props: Props) {
+export default function DateInput(props: DateInputProps) {
   const [value, setValue] = useState(null);
 
   return (
@@ -18,6 +16,7 @@ export default function DateInput(props: Props) {
         value={value}
         onChange={(newValue) => {
           setValue(newValue);
+          props.onChange(newValue);
         }}
         renderInput={(params) => <TextField {...params} />}
       />

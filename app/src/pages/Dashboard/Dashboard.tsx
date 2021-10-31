@@ -1,15 +1,14 @@
-import React from 'react';
-
-import Block from '../../Components/Common/Block/Block'
+// Components.
 import YourActivity from './YourActivity'
 import Header from './Header'
 import Footer from './Footer'
+import AccountBalance from './AccountBalance';
 
 function Dashboard() {
   return (
     <div className="Dashboard">
       <Header />
-      <Block />
+      <AccountBalance />
       <YourActivity />
       <Footer />
     </div>

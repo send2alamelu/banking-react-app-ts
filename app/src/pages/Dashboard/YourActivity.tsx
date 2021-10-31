@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 import Divider from '@mui/material/Divider';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,29 +7,24 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-// {
-//   "id": "3c6bee24-072d-4919-aff9-b87d1f4c3895",
-//   "type": "receive",
-//   "amount": 23,
-//   "currency": "SGD",
-//   "from": {
-//       "accountNo": "8182-321-9921",
-//       "accountHolderName": "Daniel"
-//   },
-//   "description": "lunch",
-//   "date": "2021-09-12T01:00:03.054Z"
-// },
-
-function createData(date: string, desc: string, amount: string) {
-  return { date, desc, amount };
-}
-
-const rows = [
-  createData('6 Sep', 'Transfer to Friend A', '-10.00'),
-  createData('31 Aug', 'Transfer to Friend A', '-10.00'),
-];
+import useGet from '../../hooks/useGet';
+import { getTransactionApiPath } from '../../utils/Api';
+import { GetResponse } from '../../types/ApiResponse';
+import { TransactionItem } from '../../types/TransactionItem';
+import { getDescriptionFromTransactionType } from '../../utils/Transaction';
 
 export default function YourActivity() {
+  const getTransaction: GetResponse = useGet(getTransactionApiPath());
+  const [transactionList, setTransactionList] = useState([]);
+
+  useEffect(() => {
+    const transactions = getTransaction?.response?.data || []
+    if (transactions.length > 0) {
+      setTransactionList(transactions);
+    }
+
+  }, [getTransaction?.response]);
+
   return (
     <>
       <h1>Your Activity</h1>
@@ -37,16 +32,16 @@ export default function YourActivity() {
       <TableContainer component={Paper}>
         <Table aria-label="activity table">
           <TableBody>
-            {rows.map((row) => (
+            {transactionList.map((transaction: TransactionItem) => (
               <TableRow
-                key={row.amount}
+                key={transaction.amount}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {row.date}
+                  {transaction.date}
                 </TableCell>
-                <TableCell align="left">{row.desc}</TableCell>
-                <TableCell align="left">{row.amount}</TableCell>
+                <TableCell align="left">{getDescriptionFromTransactionType(transaction)}</TableCell>
+                <TableCell align="left">{transaction.amount}</TableCell>
               </TableRow>
             ))}
           </TableBody>

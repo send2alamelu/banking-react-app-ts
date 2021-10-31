@@ -1,18 +1,22 @@
 import React from 'react';
 import TextField from '@mui/material/TextField';
+import PasswordInputProps from './PasswordInput.props';
 
-interface Props {
-  label: string;
-}
+function PasswordInput(props: PasswordInputProps) {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    props?.onChange(e.target.value);
+  };
 
-function PasswordInput(props: Props) {
   return (
     <>
-      <TextField id="standard-password-input"
+      <TextField
+        id="standard-password-input"
         label={props?.label}
         type="password"
         autoComplete="current-password"
-        variant="standard" />
+        variant="standard"
+        onChange={onChange}
+      />
     </>
   );
 }
