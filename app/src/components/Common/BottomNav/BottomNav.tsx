@@ -10,7 +10,7 @@ export default function BottomNav(props: Props) {
   const [value, setValue] = useState(0);
 
   return (
-    <Box sx={{ width: 500 }}>
+    <Box pt={4}>
       <BottomNavigation
         showLabels
         value={value}

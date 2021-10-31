@@ -12,6 +12,7 @@ import { getTransactionApiPath } from '../../utils/Api';
 import { GetResponse } from '../../types/ApiResponse';
 import { TransactionItem } from '../../types/TransactionItem';
 import { getDescriptionFromTransactionType } from '../../utils/Transaction';
+import { formatTransactionDate } from '../../utils/Dashboard';
 
 export default function YourActivity() {
   const getTransaction: GetResponse = useGet(getTransactionApiPath());
@@ -38,7 +39,7 @@ export default function YourActivity() {
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {transaction.date}
+                  {formatTransactionDate(transaction.date)}
                 </TableCell>
                 <TableCell align="left">{getDescriptionFromTransactionType(transaction)}</TableCell>
                 <TableCell align="left">{transaction.amount}</TableCell>

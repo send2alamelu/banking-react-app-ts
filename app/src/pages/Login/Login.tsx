@@ -26,9 +26,9 @@ function Login() {
       localStorage.setItem('jwtToken', loginResponse?.token)
       history.push(DASHBOARD);
     }
-  }, [response, error]);
+  }, [response, error, history]);
 
-  const goToDashboard = useCallback(async (e: React.MouseEvent<HTMLElement>) => {
+  const loginAndgoToDashboard = useCallback(async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     if (!userName || !passWord) {
       return
@@ -38,14 +38,13 @@ function Login() {
       username: userName,
       password: passWord
     });
-  }, [userName, passWord]);
+  }, [userName, passWord, postApi]);
 
   return (
     <Grid
       container
       spacing={0}
       direction="column"
-      alignItems="center"
       justifyContent="center"
       style={{ minHeight: '100vh' }}
     >
@@ -54,7 +53,7 @@ function Login() {
         <br />
         <PasswordInput id="password" label="Password" onChange={setPassWord} />
         <br /><br />
-        <ActionButton onClick={goToDashboard} />
+        <ActionButton onClick={loginAndgoToDashboard} />
       </Grid>
 
     </Grid>

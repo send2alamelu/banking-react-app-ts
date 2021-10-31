@@ -34,7 +34,7 @@ const useGet = (url: string, options: any = {}) => {
       }
     };
     FetchData();
-  }, [url]);
+  }, [url, history, options, response]);
   return { response, error };
 };
 

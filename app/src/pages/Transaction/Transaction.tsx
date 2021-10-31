@@ -9,6 +9,7 @@ import RecepientDropdown from './RecepientDropdown';
 import usePost from '../../hooks/usePost';
 import { getTransferApiPath } from '../../utils/Api';
 import { ROUTE_PATH } from '../../constants/RoutePath';
+import { Box } from '@mui/system';
 
 const { DASHBOARD } = ROUTE_PATH;
 
@@ -25,11 +26,9 @@ function Transaction() {
     if (transactionResponse?.status === 'success') {
       history.push(DASHBOARD);
     }
-  }, [response, error]);
+  }, [response, error, history]);
 
   const onSubmit = async () => {
-    console.log('on submit called: ', recipientAccountNumber, amount, dateTransfer, description);
-
     if (!recipientAccountNumber || !amount) {
       return
     }
@@ -44,15 +43,14 @@ function Transaction() {
 
   return (
     <>
-      <Typography variant="h2" component="h2">
-        Make a Transfer
-      </Typography>
+      <Box px={2} pt={2} pb={4}>
+        <Typography variant="h4" component="h4">
+          Make a Transfer
+        </Typography>
+      </Box>
       <RecepientDropdown onChange={setRecipientAccountNumber} />
-      <br />
       <DateInput id="transfer-date" label="Data of Transfer" onChange={setDateTransfer} />
-      <br />
       <TextInput id="desc" label="Description" onChange={setDescription} />
-      <br />
       <TextInput id="amount" label="Amount" onChange={setAmount} />
       <Footer onSubmit={onSubmit} />
     </>

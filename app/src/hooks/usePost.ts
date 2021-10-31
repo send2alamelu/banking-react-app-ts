@@ -22,7 +22,7 @@ const usePost = (url: string, options: any = {}) => {
     } catch (error: any) {
       setError(error);
     }
-  }, [url]);
+  }, [url, options]);
 
   return { postApi, response, error };
 };

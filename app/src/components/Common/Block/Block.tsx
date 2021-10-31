@@ -8,7 +8,7 @@ interface BlockProps {
 
 export default function Block(props: BlockProps) {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card>
       <CardContent>
         {props.children}
       </CardContent>

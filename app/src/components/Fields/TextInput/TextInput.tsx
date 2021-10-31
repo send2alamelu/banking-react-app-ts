@@ -1,6 +1,8 @@
-import React, { ChangeEventHandler } from 'react';
+import React from 'react';
 import TextField from '@mui/material/TextField';
 import TextInputProps from './TextInput.props';
+import { FormControl } from '@mui/material';
+import { Box } from '@mui/system';
 
 function TextInput(props: TextInputProps) {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -8,9 +10,16 @@ function TextInput(props: TextInputProps) {
   };
 
   return (
-    <>
-      <TextField id="standard-basic" label={props?.label} variant="standard" onChange={onChange} />
-    </>
+    <Box pb={2} px={2}>
+      <FormControl fullWidth>
+        <TextField
+          id="standard-basic"
+          label={props?.label}
+          variant="standard"
+          onChange={onChange}
+        />
+      </FormControl>
+    </Box>
   );
 }
 

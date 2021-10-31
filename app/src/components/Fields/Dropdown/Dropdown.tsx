@@ -31,7 +31,7 @@ export default function Dropdown(props: Props) {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box pb={2} px={2}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">{props?.label}</InputLabel>
         <MuiSelect
