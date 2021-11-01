@@ -1,12 +1,9 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavProps from './BottomNav.props';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-export default function BottomNav(props: Props) {
+export default function BottomNav(props: BottomNavProps) {
   const [value, setValue] = useState(0);
 
   return (

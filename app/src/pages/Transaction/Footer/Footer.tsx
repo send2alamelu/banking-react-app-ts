@@ -5,13 +5,11 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import SendIcon from '@mui/icons-material/Send';
 import CancelIcon from '@mui/icons-material/Cancel';
 
-import BottomNav from '../../components/Common/BottomNav/BottomNav';
-import { ROUTE_PATH } from '../../constants/RoutePath';
-const { DASHBOARD } = ROUTE_PATH;
+import BottomNav from '../../../components/Common/BottomNav/BottomNav';
+import { ROUTE_PATH } from '../../../constants/RoutePath';
+import FooterProps from './Footer.props';
 
-interface FooterProps {
-  onSubmit: Function;
-}
+const { DASHBOARD } = ROUTE_PATH;
 
 export default function Footer(props: FooterProps) {
   const history = useHistory();

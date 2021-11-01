@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
-import Dropdown from "../../components/Fields/Dropdown/Dropdown";
-import useGet from "../../hooks/useGet";
-import { GetResponse } from "../../types/ApiResponse";
-import { getPayeeApiPath } from "../../utils/Api";
+import Dropdown from "../../../components/Fields/Dropdown/Dropdown";
+import useGet from "../../../hooks/useGet";
+import { GetResponse } from "../../../types/ApiResponse";
+import { getPayeeApiPath } from "../../../utils/Api";
+import RecepientDropdownProps from './RecepientDropdown.props';
 
-interface Props {
-  onChange: Function;
-}
-
-function RecepientDropdown(props: Props) {
+function RecepientDropdown(props: RecepientDropdownProps) {
   const getPayee: GetResponse = useGet(getPayeeApiPath());
   const [recepientList, setRecepientList] = useState([]);
 

@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom';
 
 import DateInput from '../../components/Fields/DateInput/DateInput';
 import TextInput from '../../components/Fields/TextInput/TextInput';
-import Footer from './Footer';
-import RecepientDropdown from './RecepientDropdown';
+import Footer from './Footer/Footer';
+import RecepientDropdown from './RecepientDropdown/RecepientDropdown';
 import usePost from '../../hooks/usePost';
 import { getTransferApiPath } from '../../utils/Api';
 import { ROUTE_PATH } from '../../constants/RoutePath';

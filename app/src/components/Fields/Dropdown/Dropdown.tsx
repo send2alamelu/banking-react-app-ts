@@ -4,17 +4,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import MuiSelect from '@mui/material/Select';
+import DropdownProps from './Dropdown.props';
 
-interface Props {
-  label: string;
-  items: {
-    value: string;
-    label: string;
-  }[],
-  onChange: Function
-}
-
-export default function Dropdown(props: Props) {
+export default function Dropdown(props: DropdownProps) {
   const [dropDownValue, setDropdownValue] = React.useState('');
 
   /**
