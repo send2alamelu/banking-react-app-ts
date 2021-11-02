@@ -7,7 +7,7 @@ export default function ActionButton(props: ActionButtonProps) {
   return (
     <Box px={2} py={2}>
       <Button fullWidth variant="contained" onClick={props?.onClick}>
-        Login
+        {props.label}
       </Button>
     </Box>
   );
