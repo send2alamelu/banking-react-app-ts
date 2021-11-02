@@ -10,16 +10,17 @@ import Block from '../../components/Common/Block/Block';
 
 export default function AccountBalance() {
   const getBalance: GetResponse = useGet(getBalancesApiPath());
+  const balanceResponse: any = getBalance?.response || {}
   const [balanceAmount, setBalanceAmount] = useState('');
 
   useEffect(() => {
-    const { balance } = getBalance?.response
+    const { balance } = balanceResponse;
     if (balance) {
       setBalanceAmount(
         currencyFormatter(balance)
       )
     }
-  }, [getBalance?.response])
+  }, [balanceResponse])
 
 
   return (
