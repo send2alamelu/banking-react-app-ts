@@ -8,6 +8,7 @@ describe('DateInput Component', () => {
   });
 
   test('renders DateInput with children', () => {
-    const { getByTestId } = render(<DateInput onChange={() => { }} />);
+    const label = 'Transfer Date';
+    const { getByTestId } = render(<DateInput id="transferDate" label={label} onChange={() => { }} />);
   });
 });

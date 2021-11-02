@@ -8,6 +8,6 @@ describe('Login Component', () => {
   });
 
   test('renders Login with children', () => {
-    const { getByTestId } = render(<Login onClick={() => { }} />);
+    const { getByTestId } = render(<Login />);
   });
 });

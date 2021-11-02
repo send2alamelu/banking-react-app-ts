@@ -8,10 +8,15 @@ describe('Block Component', () => {
   });
 
   test('renders Block with children', () => {
+    // Arrange.
     const { getByTestId } = render(<Block>
-      <h1 data-testid="title">Block Content</h1>
+      <h1 data-testid="block-children">Block Content</h1>
     </Block>);
-    const title = getByTestId("title");
-    expect(title.textContent).toBe('Block Content');
+
+    // Act.
+    const blockChildren = getByTestId("block-children");
+
+    // Assert.
+    expect(blockChildren.textContent).toBe('Block Content');
   });
 });
