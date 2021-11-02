@@ -1,28 +1,18 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { useHistory } from 'react-router-dom';
-import { ROUTE_PATH } from '../constants/RoutePath';
 
-const { LOGIN } = ROUTE_PATH;
-
-const useGet = (url: string, options: any = {}) => {
-  const history = useHistory();
-  const [response, setResponse] = useState({});
-  const [error, setError] = useState(null);
+const useGet = (url: string) => {
+  const [response, setResponse] = useState(null);
+  const [error, setError] = useState(false);
+  const Authorization = localStorage.getItem('jwtToken') || ''
 
   useEffect(() => {
     const FetchData = async () => {
-      // Go to Login screen when there is no token available
-      if (!localStorage.getItem('jwtToken')) {
-        history.push(LOGIN);
-      }
-
       try {
         await axios.get(url, {
           headers: {
-            Authorization: localStorage.getItem('jwtToken'),
-          },
-          ...options
+            Authorization,
+          }
         }).then((response: AxiosResponse) => {
           setResponse(response.data);
         }).catch(function (error: AxiosError) {
@@ -34,7 +24,7 @@ const useGet = (url: string, options: any = {}) => {
       }
     };
     FetchData();
-  }, [url, history, options, response]);
+  }, [url]);
   return { response, error };
 };
 
