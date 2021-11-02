@@ -1,11 +1,14 @@
 # OCBC Simple Login Page
 A simple Banking dashboard which displays transactions and a simple transfer to payee page , can only be accessing through credentials.
 
-This project is built with TypeScript, React, NodeJs, CSS and HTML.
+This project is built with Create React App with TypeScript and UI Framework is Materil UI.
 
 ## Dependencies
-ReactJs, MaterialUI, NodeJs and 
-
+ReactJS
+MaterialUI
+Axios
+emotions
+styled-component
 
 ## 5 APIs have been added  with Unit test:
 1. authenticate/login - User is able to login
@@ -29,15 +32,10 @@ ReactJs, MaterialUI, NodeJs and
    Authorization: {{the-token}}
    ```
    
-### UI
+### UI - Demo Screenshots
 
 ![01 - Landing](https://raw.githubusercontent.com/send2alamelu/banking-react-app-ts/master/screenshots/login.png)
 ![02 - Dashboard](https://raw.githubusercontent.com/send2alamelu/banking-react-app-ts/master/screenshots/dashboard.png)
 ![03 - Transaction](https://github.com/send2alamelu/banking-react-app-ts/blob/master/screenshots/transaction3.png)
 ![04 - Payee](https://github.com/send2alamelu/banking-react-app-ts/blob/master/screenshots/transaction3.png)
 ![05 - Calender](https://github.com/send2alamelu/banking-react-app-ts/blob/master/screenshots/transaction3.png)
-
-
-### Submission
-Pushed the source code to github and below is the repo link.
-https://github.com/send2alamelu/banking-react-app-ts
