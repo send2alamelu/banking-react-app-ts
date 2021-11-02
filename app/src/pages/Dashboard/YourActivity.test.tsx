@@ -9,12 +9,11 @@ describe('YourActivity Component', () => {
 
   test('renders YourActivity with children', () => {
     // Arrange.
-    const { asFragment, getByText } = render(<YourActivity />);
+    const { asFragment } = render(<YourActivity />);
     
     // Assert.
     // expect(getByText(/Your Activity/i)).toBeDefined();
     expect(asFragment()).toMatchSnapshot();
-
   });
 });
 
