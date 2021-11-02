@@ -12,10 +12,10 @@ function RecepientDropdown(props: RecepientDropdownProps) {
   useEffect(() => {
     const recepients = getPayee?.response?.data || []
     if (recepients.length > 0) {
-      setRecepientList(recepients.map(((recepient: any) => ({
-        value: recepient.accountNo,
-        label: recepient.accountHolderName,
-      }))));
+      setRecepientList(recepients.map((recepients: any) => ({
+        value: recepients?.accountNo,
+        label: recepients?.accountHolderName,
+      })));
     }
 
   }, [getPayee?.response]);

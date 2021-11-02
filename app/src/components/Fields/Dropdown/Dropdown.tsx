@@ -4,7 +4,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import MuiSelect from '@mui/material/Select';
-import DropdownProps from './Dropdown.props';
+import { DropdownProps } from './Dropdown.props';
 
 export default function Dropdown(props: DropdownProps) {
   const [dropDownValue, setDropdownValue] = React.useState('');
@@ -33,9 +33,9 @@ export default function Dropdown(props: DropdownProps) {
           label={props?.label}
           onChange={handleChange}
         >
-          {props.items.map((item) => {
+          {props.items.map(({ value, label }) => {
             return (
-              <MenuItem value={item?.value}>{item.label}</MenuItem>
+              <MenuItem key={value} value={value}>{label}</MenuItem>
             )
           })}
         </MuiSelect>

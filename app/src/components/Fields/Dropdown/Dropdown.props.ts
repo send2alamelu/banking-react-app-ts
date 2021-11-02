@@ -1,8 +1,10 @@
-export default interface DropdownProps {
+export interface DropdownItem {
+  value: string;
   label: string;
-  items: {
-    value: string;
-    label: string;
-  }[],
+}[]
+
+export interface DropdownProps {
+  label: string;
+  items: DropdownItem[],
   onChange: Function
 }
