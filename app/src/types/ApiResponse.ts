@@ -1,6 +1,6 @@
 export interface GetResponse {
   response: any;
-  error: any;
+  error?: any;
 }
 
 export interface PostResponse {

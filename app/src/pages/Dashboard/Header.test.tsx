@@ -1,6 +1,16 @@
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Header from './Header';
+
+jest.mock('react-router-dom', () => {
+  return {
+    useHistory: () => {
+      return {
+        push: jest.fn,
+      }
+    }
+  }
+})
 
 describe('Header Component', () => {
   afterEach(() => {
@@ -8,6 +18,14 @@ describe('Header Component', () => {
   });
 
   test('renders Header with children', () => {
-    const { getByTestId } = render(<Header />);
+    // Arrange
+    const { getByText } = render(<Header />);
+    const logoutLink = getByText(/Logout/i);
+  
+    // Act.
+    fireEvent.click(logoutLink)
+
+    // Assert
+    expect(logoutLink).toBeDefined(); 
   });
 });

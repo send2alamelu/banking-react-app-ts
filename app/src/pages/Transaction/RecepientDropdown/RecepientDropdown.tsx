@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Dropdown from "../../../components/Fields/Dropdown/Dropdown";
-import useGet from "../../../hooks/useGet";
+import { useGet } from "../../../hooks/useGet";
 import { GetResponse } from "../../../types/ApiResponse";
 import { getPayeeApiPath } from "../../../utils/Api";
 import RecepientDropdownProps from './RecepientDropdown.props';

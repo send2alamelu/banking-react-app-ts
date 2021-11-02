@@ -1,4 +1,4 @@
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Login from './Login';
 
@@ -8,6 +8,14 @@ describe('Login Component', () => {
   });
 
   test('renders Login with children', () => {
-    const { getByTestId } = render(<Login />);
+    // Arrange.
+    const { getByLabelText, getByText } = render(<Login />);
+    const username = getByLabelText('Username');
+    const password = getByLabelText('Password');
+    username.value = 'ocbc';
+    password.value = '123456';
+
+    // Act.
+    fireEvent.click(getByText('Login'));
   });
 });

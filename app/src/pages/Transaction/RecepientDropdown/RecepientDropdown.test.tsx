@@ -8,6 +8,7 @@ describe('RecepientDropDown Component', () => {
   });
 
   test('renders RecepientDropDown with children', () => {
-    const { getByTestId } = render(<RecepientDropDown onChange={() => { }} />);
+    const { asFragment } = render(<RecepientDropDown onChange={() => { }} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

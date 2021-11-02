@@ -8,6 +8,7 @@ describe('Dashboard Component', () => {
   });
 
   test('renders Dashboard with children', () => {
-    const { getByTestId } = render(<Dashboard />);
+    const { asFragment } = render(<Dashboard />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

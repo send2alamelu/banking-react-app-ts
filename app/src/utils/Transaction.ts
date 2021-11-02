@@ -1,4 +1,4 @@
-import { TransactionItem, TransactionAccountDetails } from "../types/TransactionItem";
+import { TransactionItem } from "../types/TransactionItem";
 
 const isTransfered = (type: string) => {
   return (type === 'transfer')

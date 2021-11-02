@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard Component renders Dashboard with children 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-undefined sc-gsDKAQ fNHwLb css-11lq3yg-MuiGrid-root"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 sc-gsDKAQ fNHwLb css-pavvoq-MuiGrid-root"
+    >
+      <div
+        class="sc-bdvvtL eLWaJE MuiBox-root css-0"
+      >
+        <button
+          class="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineAlways MuiLink-button css-1daramq-MuiTypography-root-MuiLink-root"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 sc-gsDKAQ fNHwLb css-16nn1fs-MuiGrid-root"
+    >
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-16m3jxf-MuiTypography-root"
+          >
+            You have
+          </p>
+          <div
+            class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+          />
+          <p
+            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          >
+            in your account
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 sc-gsDKAQ fNHwLb css-16nn1fs-MuiGrid-root"
+    >
+      <h1>
+        Your Activity
+      </h1>
+      <hr
+        class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+      />
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-11xur9t-MuiPaper-root-MuiTableContainer-root"
+      >
+        <table
+          aria-label="activity table"
+          class="MuiTable-root css-rqglhn-MuiTable-root"
+        >
+          <tbody
+            class="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+          />
+        </table>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 sc-gsDKAQ fNHwLb css-16nn1fs-MuiGrid-root"
+    >
+      <div
+        class="MuiBox-root css-xuhmcu"
+      >
+        <div
+          class="MuiBottomNavigation-root css-16lloyr-MuiBottomNavigation-root"
+        >
+          <button
+            class="MuiButtonBase-root MuiBottomNavigationAction-root css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root"
+            tabindex="0"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="SendIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"
+              />
+            </svg>
+            <span
+              class="MuiBottomNavigationAction-label css-imwso6-MuiBottomNavigationAction-label"
+            >
+              Make a transfer
+            </span>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

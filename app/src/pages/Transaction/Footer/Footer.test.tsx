@@ -8,6 +8,7 @@ describe('Footer Component', () => {
   });
 
   test('renders Footer with children', () => {
-    const { getByTestId } = render(<Footer onSubmit={() => { }} />);
+    const { asFragment } = render(<Footer onSubmit={jest.fn} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

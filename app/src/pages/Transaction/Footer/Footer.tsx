@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';

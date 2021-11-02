@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
-const useGet = (url: string) => {
+export const useGet = (url: string) => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(false);
   const Authorization = localStorage.getItem('jwtToken') || ''
@@ -24,8 +24,7 @@ const useGet = (url: string) => {
       }
     };
     FetchData();
+    // eslint-disable react-hooks/exhaustive-dep
   }, [url]);
   return { response, error };
 };
-
-export default useGet;

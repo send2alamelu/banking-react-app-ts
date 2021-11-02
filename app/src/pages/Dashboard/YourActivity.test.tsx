@@ -8,6 +8,14 @@ describe('YourActivity Component', () => {
   });
 
   test('renders YourActivity with children', () => {
-    const { getByTestId } = render(<YourActivity />);
+    // Arrange.
+    const { asFragment, getByText } = render(<YourActivity />);
+    
+    // Assert.
+    // expect(getByText(/Your Activity/i)).toBeDefined();
+    expect(asFragment()).toMatchSnapshot();
+
   });
 });
+
+

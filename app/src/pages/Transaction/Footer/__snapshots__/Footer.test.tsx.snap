@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component renders Footer with children 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-xuhmcu"
+  >
+    <div
+      class="MuiBottomNavigation-root css-16lloyr-MuiBottomNavigation-root"
+    >
+      <button
+        class="MuiButtonBase-root MuiBottomNavigationAction-root css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root"
+        tabindex="0"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="CancelIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+          />
+        </svg>
+        <span
+          class="MuiBottomNavigationAction-label css-imwso6-MuiBottomNavigationAction-label"
+        >
+          Cancel
+        </span>
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        class="MuiButtonBase-root MuiBottomNavigationAction-root css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root"
+        tabindex="0"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="SendIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"
+          />
+        </svg>
+        <span
+          class="MuiBottomNavigationAction-label css-imwso6-MuiBottomNavigationAction-label"
+        >
+          Submit
+        </span>
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

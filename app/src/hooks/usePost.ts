@@ -1,9 +1,7 @@
 import { useState, useCallback } from 'react';
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { useHistory } from 'react-router-dom';
 
 const usePost = (url: string, options: any = {}) => {
-  const history = useHistory();
   const [response, setResponse] = useState({});
   const [error, setError] = useState(null);
 

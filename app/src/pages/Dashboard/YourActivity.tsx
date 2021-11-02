@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-import useGet from '../../hooks/useGet';
+import { useGet } from '../../hooks/useGet';
 import { getTransactionApiPath } from '../../utils/Api';
 import { GetResponse } from '../../types/ApiResponse';
 import { TransactionItem } from '../../types/TransactionItem';

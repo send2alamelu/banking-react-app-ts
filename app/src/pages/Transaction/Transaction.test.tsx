@@ -8,6 +8,7 @@ describe('Transaction Component', () => {
   });
 
   test('renders Transaction with children', () => {
-    const { getByTestId } = render(<Transaction />);
+    const { asFragment } = render(<Transaction />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Typography from '@mui/material/Typography';
 
-import useGet from '../../hooks/useGet';
+import { useGet } from '../../hooks/useGet';
 import { getBalancesApiPath } from '../../utils/Api';
 import { currencyFormatter } from '../../utils/Transaction';
 import { GetResponse } from '../../types/ApiResponse';
@@ -10,17 +10,17 @@ import Block from '../../components/Common/Block/Block';
 
 export default function AccountBalance() {
   const getBalance: GetResponse = useGet(getBalancesApiPath());
-  const balanceResponse: any = getBalance?.response || {}
   const [balanceAmount, setBalanceAmount] = useState('');
 
   useEffect(() => {
+    const balanceResponse: any = getBalance?.response || {}
     const { balance } = balanceResponse;
     if (balance) {
       setBalanceAmount(
         currencyFormatter(balance)
       )
     }
-  }, [balanceResponse])
+  }, [getBalance])
 
 
   return (
