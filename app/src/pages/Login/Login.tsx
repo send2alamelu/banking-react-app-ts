@@ -53,9 +53,8 @@ function Login() {
         <br />
         <PasswordInput id="password" label="Password" onChange={setPassWord} />
         <br /><br />
-        <ActionButton onClick={loginAndgoToDashboard} />
+        <ActionButton label="Login" onClick={loginAndgoToDashboard} />
       </Grid>
-
     </Grid>
   );
 }
